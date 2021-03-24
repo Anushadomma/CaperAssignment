@@ -7,10 +7,15 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class Utils {
-    public static String getAssetJsonData(Context context) {
+    public static Context context;
+
+    public Utils(Context context){
+        context = context;
+    }
+    public static String getAssetJsonData() {
         String json;
         try {
-            InputStream is = context.getAssets().open("caper.json");
+            InputStream is = Utils.context.getAssets().open("caper.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

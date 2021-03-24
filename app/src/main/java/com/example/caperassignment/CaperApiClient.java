@@ -15,16 +15,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CaperApiClient {
 
-    private static Context context = null;
-
-public CaperApiClient(Context context){
-    this.context = context;
-}
     private static Retrofit retrofit = null;
     public static CaperApi getItem(){
         if (retrofit == null) {
 
-             String jsonFileString = Utils.getAssetJsonData(context);
+             String jsonFileString = Utils.getAssetJsonData();
 
             OkHttpClient okHttpClient=new OkHttpClient.Builder()
                     .addInterceptor(new Interceptor() {
@@ -35,7 +30,7 @@ public CaperApiClient(Context context){
                         }
                     }).build();
             retrofit=new Retrofit.Builder()
-                    .baseUrl("caper.json")
+                    .baseUrl(jsonFileString)
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
