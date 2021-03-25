@@ -122,7 +122,6 @@ public class ShopFragment extends Fragment {
     }
 
     private void showItems() {
-        Log.i(TAG, "showSuccessfulMessage: "+codes.size());
         cartView.setVisibility(View.VISIBLE);
     }
 }
