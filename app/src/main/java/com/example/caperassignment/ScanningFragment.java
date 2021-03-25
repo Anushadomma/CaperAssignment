@@ -31,9 +31,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import static android.content.ContentValues.TAG;
 
 public class ScanningFragment extends Fragment implements View.OnClickListener {
+    public static String TAG = "scanningFragment";
 
     SurfaceView surfaceView= null;
     private static final int REQUEST_CAMERA_PERMISSION = 201;

@@ -22,10 +22,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static android.content.ContentValues.TAG;
-
 public class ShopFragment extends Fragment {
 
+    public static String TAG = "shopFragment";
     FloatingActionButton btnScan;
     RecyclerView cartView;
     TextView totalPrice;
