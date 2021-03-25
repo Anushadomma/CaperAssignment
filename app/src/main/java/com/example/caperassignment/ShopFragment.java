@@ -74,6 +74,7 @@ public class ShopFragment extends Fragment {
                             bundle.setId(response.body().getId());
                             bundle.setPrice(response.body().getPrice());
                             bundle.setName(response.body().getName());
+                            bundle.setqrUrl(response.body().getqrUrl());
                             items.add(bundle);
                             mAdapter=new ShopAdapter(items,getContext());
                             cartView.setAdapter(mAdapter);
